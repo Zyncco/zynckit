@@ -1,0 +1,28 @@
+{
+  "name": "zynckit",
+  "version": "0.0.1",
+  "description": "Shared (S)CSS styles for Zync applications",
+  "main": "src/index.scss",
+  "scripts": {
+    "create:component": "node ./bin/createComponent.js",
+    "create:util": "node ./bin/createUtil.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zyncco/zynckit.git"
+  },
+  "keywords": [
+    "zync",
+    "css",
+    "scss",
+    "style",
+    "design",
+    "kit"
+  ],
+  "author": "Zync <support@zync.co>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Zyncco/zynckit/issues"
+  },
+  "homepage": "https://github.com/Zyncco/zynckit#readme"
+}
