@@ -1,4 +1,10 @@
 // Gets the specified color from the color
 @function color($name) {
-    @return map-get($colors, $name);
+  @return map-get($colors, $name);
+}
+
+@function contrast-color($color) {
+  @warn lightness($color);
+
+  @return if(lightness($color) >= 70%, color('dark'), color('light'));
 }

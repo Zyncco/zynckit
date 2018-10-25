@@ -14,5 +14,6 @@ yarn-error.log*
 *.sln
 *.sw*
 
-# "Playground" file
-playground.html
+# "Playground" files
+playground/
+!playground/README.md

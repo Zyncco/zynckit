@@ -4,6 +4,12 @@
   "description": "Shared (S)CSS styles for Zync applications",
   "main": "src/index.scss",
   "scripts": {
+    "build": "node-sass src/index.scss dist/zynckit.scss",
+    "watch": "npm run build && concurrently 'npm:watch:scss' 'npm:watch:browser'",
+    "watch:scss": "node-sass -w -r src/index.scss dist/zynckit.css",
+    "lint": "stylelint src/*.scss",
+    "lint:fix": "stylelint src/*.scss --fix",
+    "watch:browser": "browser-sync 'playground' 'dist' -w",
     "create:component": "node ./bin/createComponent.js",
     "create:util": "node ./bin/createUtil.js"
   },
@@ -24,5 +30,14 @@
   "bugs": {
     "url": "https://github.com/Zyncco/zynckit/issues"
   },
-  "homepage": "https://github.com/Zyncco/zynckit#readme"
+  "homepage": "https://github.com/Zyncco/zynckit#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "concurrently": "^4.0.1",
+    "node-sass": "^4.9.4",
+    "stylelint": "^9.6.0",
+    "stylelint-config-rational-order": "^0.0.2",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-scss": "^3.3.2"
+  }
 }

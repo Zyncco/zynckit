@@ -1,0 +1,65 @@
+.button {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  font-weight: 600;
+  font-size: 1em;
+  font-family: "Open Sans", sans-serif;
+  border-radius: 0.2em;
+  outline: none;
+  box-shadow: 0 4px 6px rgba(45, 52, 54, 0.11), 0 1px 3px rgba(45, 52, 54, 0.08);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; }
+  .button:hover:not([disabled]), .button:focus:not([disabled]) {
+    box-shadow: 0 5px 12px rgba(45, 52, 54, 0.2), 0 3px 6px rgba(45, 52, 54, 0.1);
+    transform: translateY(-1px); }
+  .button:active:not([disabled]) {
+    box-shadow: 0 4px 6px rgba(45, 52, 54, 0.11), 0 1px 3px rgba(45, 52, 54, 0.08);
+    transform: translateY(0); }
+  .button.button--primary {
+    color: #fff;
+    background-color: #488cff;
+    border: 1px solid #347fff; }
+    .button.button--primary:disabled {
+      background-color: #aeccff;
+      border-color: #9abfff;
+      box-shadow: none;
+      cursor: not-allowed; }
+  .button.button--light {
+    color: #2d3436;
+    background-color: #fff;
+    border: 1px solid whitesmoke; }
+    .button.button--light:disabled {
+      background-color: white;
+      border-color: whitesmoke;
+      box-shadow: none;
+      cursor: not-allowed; }
+  .button.button--dark {
+    color: #fff;
+    background-color: #2d3436;
+    border: 1px solid #24292b; }
+    .button.button--dark:disabled {
+      background-color: #5b6a6e;
+      border-color: #525f63;
+      box-shadow: none;
+      cursor: not-allowed; }
+  .button.button--error {
+    color: #fff;
+    background-color: #ee5253;
+    border: 1px solid #ec3f41; }
+    .button.button--error:disabled {
+      background-color: #f7afaf;
+      border-color: #f59c9d;
+      box-shadow: none;
+      cursor: not-allowed; }
+  .button.button--success {
+    color: #fff;
+    background-color: #2ed573;
+    border: 1px solid #28c76a; }
+    .button.button--success:disabled {
+      background-color: #83e6ac;
+      border-color: #72e3a1;
+      box-shadow: none;
+      cursor: not-allowed; }
+
+* {
+  box-sizing: border-box; }
