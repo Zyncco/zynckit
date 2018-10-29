@@ -1,0 +1,39 @@
+.input {
+  // This selects all "textual" inputs
+  @at-root {
+    &[type="text"],
+    &[type="search"],
+    &[type="tel"],
+    &[type="url"],
+    &[type="email"],
+    &[type="password"],
+    &[type="date"],
+    &[type="month"],
+    &[type="week"],
+    &[type="time"],
+    &[type="number"],
+    &[type="color"],
+    // "Hack" because SCSS doesn't support &type selectors
+    // This is also why we use @at-root
+    #{selector-unify(&, textarea)} {
+      display: block;
+      width: 100%;
+      padding: 0.5em;
+      color: color('dark');
+      font-size: 1em;
+      font-family: $font-primary;
+      border: 1px solid lighten(color('dark'), 75%);
+      border-radius: 0.2em;
+      outline: none;
+      box-shadow:
+        0 2px 3px transparentize(color('dark'), 0.89),
+        0 1px 1px transparentize(color('dark'), 0.92);
+      transition: border 0.2s ease-in-out;
+      resize: none;
+
+      &:focus:not(:disabled) {
+        border-color: lighten(color('primary'), 20%);
+      }
+    }
+  }
+}

@@ -1,9 +1,9 @@
 $colors: (
-  'primary': #488cff,
-  'light': #fff,
-  'dark': #2d3436,
-  'error': #ee5253,
-  'success': #2ed573
+  'primary': (#488cff, #fff),
+  'light': (#fff, #488cff),
+  'dark': (#2d3436, #fff),
+  'error': (#ee5253, #fff),
+  'success': (#2ed573, #fff)
 );
 
 $font-primary: 'Open Sans', sans-serif;

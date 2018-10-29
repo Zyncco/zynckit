@@ -17,3 +17,6 @@ yarn-error.log*
 # "Playground" files
 playground/
 !playground/README.md
+
+# Dist files
+dist/

@@ -7,7 +7,7 @@ module.exports = (rootPath, type) => {
     if (!name || name === "") error(`Please enter a ${component} name`);
 
     // If the file already exists, don't overwrite it
-    if (fs.existsSync(path.join(rootPath, `_${name}.scss`))) 
+    if (fs.existsSync(path.join(rootPath, `_${name}.scss`)))
         error("File for that component already exists!");
 
     // Create file
@@ -22,8 +22,6 @@ module.exports = (rootPath, type) => {
 
     // Remove any blank lines
     lines = lines.filter((a) => a !== "");
-
-    console.log(lines);
 
     // If for whatever reason that component is already in the file, just exit
     if (lines.includes(importString)) process.exit(0);
