@@ -10,6 +10,17 @@
   <link href="zynckit.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Enter your markup here! -->
+  <div class="container">
+    <h1>Test</h1>
+
+    <button id="test" class="button button--primary">Button</button>
+    <button class="button button--primary button--loading">Button</button>
+  </div>
+
+  <script>
+    document.getElementById('test').addEventListener('click', (e) => {
+      e.target.classList.toggle('button--loading');
+    });
+  </script>
 </body>
 </html>

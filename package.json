@@ -4,7 +4,7 @@
   "description": "Shared (S)CSS styles for Zync applications",
   "main": "src/index.scss",
   "scripts": {
-    "build": "node-sass src/index.scss dist/zynckit.scss",
+    "build": "node-sass src/index.scss dist/zynckit.css",
     "watch": "npm run build && concurrently 'npm:watch:scss' 'npm:watch:browser'",
     "watch:scss": "node-sass -w -r src/index.scss dist/zynckit.css",
     "lint": "stylelint src/*.scss",
