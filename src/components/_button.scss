@@ -1,9 +1,11 @@
 .button {
+  position: relative;
   display: inline-block;
   padding: 0.5em 1.5em;
   font-weight: 600;
   font-size: 1em;
   font-family: $font-primary;
+  border: none;
   border-radius: 0.2em;
   outline: none;
   box-shadow:
@@ -20,7 +22,8 @@
     transform: translateY(-1px);
   }
 
-  &:active:not([disabled]) {
+  &:active:not([disabled]),
+  &.button--loading:not([disabled]) {
     box-shadow:
       0 4px 6px transparentize(color('dark'), 0.89),
       0 1px 3px transparentize(color('dark'), 0.92);
@@ -31,7 +34,14 @@
     &.button--#{$name} {
       color: contrast-color($name);
       background-color: color($name);
-      border: 1px solid darken(color($name), 4%);
+
+      &.button--loading::before {
+        border-color: transparentize(contrast-color($name), 0.5);
+      }
+
+      &.button--loading::after {
+        border-top-color: contrast-color($name);
+      }
 
       &:disabled {
         $disabled-color: lighten(color($name), 20%);
@@ -46,6 +56,33 @@
   }
 
   &.button--loading {
-    content: "Loading...";
+    color: transparent;
+
+    &::before, &::after {
+      border: 0.1em solid;
+      content: "";
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+    }
+
+    &::after {
+      border-color: transparent;
+      animation: loader-spin 0.5s linear infinite;
+    }
+  }
+}
+
+@keyframes loader-spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
